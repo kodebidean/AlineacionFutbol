@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Alineación de Futbolistas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Alineación de Futbolistas</h1>
+  
+  <div id="tablero">
+    <!-- Aquí se generará el tablero táctico -->
+  </div>
+
+  <form id="jugadorForm">
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="text" id="apellido" placeholder="Apellido" required>
+    <input type="number" id="dorsal" placeholder="Dorsal" required>
+    <select id="posicion">
+      <option value="DL1">Delantero 1 (DL)</option>
+      <option value="DL2">Delantero 2 (DL)</option>
+      <option value="MO1">MedioOfensivo 1 (MO)</option>
+      <option value="MC1">MedioCentro 1 (MC)</option>
+      <option value="MC2">MedioCentro 2 (MC)</option>
+      <option value="MD1">MedioDefensivo 1 (MD)</option>
+      <option value="DF1">Defensa 1 (DF)</option>
+      <option value="DF2">Defensa 2 (DF)</option>
+      <option value="DF3">Defensa 3 (DF)</option>
+      <option value="DF4">Defensa 4 (DF)</option>
+      <option value="PT">Portero (PT)</option>
+    </select>
+    <label><input type="checkbox" id="titular"> Titular</label>
+    <button type="submit">Añadir Jugador</button>
+  </form>
+
+  <!-- Tabla de jugadores -->
+  <table class="tabla-jugadores">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Dorsal</th>
+        <th>Posición</th>
+        <th>Titular / Suplente</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="jugadoresTable">
+      <!-- Las filas de la tabla se añadirán dinámicamente desde JavaScript -->
+    </tbody>
+  </table>
+
+  <button id="limpiarTablero">Limpiar Tablero</button>
+
+  <!-- Firebase JavaScript SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
